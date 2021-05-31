@@ -15,4 +15,10 @@ class HtmlPagesControllerTest < ActionDispatch::IntegrationTest
     get html_pages_about_url
     assert_response :success
   end
+
+  test "should get contact" do
+    get html_pages_contact_url
+    assert_response :success
+    assert_select "title", "Contact | Orbit Feedback Application"
+  end
 end
